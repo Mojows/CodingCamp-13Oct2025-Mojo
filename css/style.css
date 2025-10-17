@@ -7,7 +7,20 @@ main {
     box-sizing: content-box;
     border-width: 0;
     border-style: solid;
-    border-color: #e5e7eb;
-}
+    border-color: #e5e7eb;}
 
+    section {
+            color: black;
+    }
+    
+    table {
+        background-color: white
+    }
+    border {
+        border-width: 1px;
+        height: 100px;
+    }
 
+    h2 {
+        color: white;
+    }
