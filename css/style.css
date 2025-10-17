@@ -1,6 +1,13 @@
 body {
 
-    justify-items: center;
-    height: 100vh;
-    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
+main {
+    box-sizing: content-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+}
+
+

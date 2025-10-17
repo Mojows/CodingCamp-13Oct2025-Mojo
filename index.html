@@ -3,55 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>to do list - mojo</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>To Do List - Mojo</title>
+    <link rel="stylesheet" href="css/style.css">  <!-- Link ke stylesheet custom Anda -->
     
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  
+    <!-- Tambahkan script Tailwind CSS untuk mengaktifkan class-class Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col">
 
-   <header>
-    <h1 class="text-3xl font-bold">My to Do List</h1>
-   </header>
-  
+    <header>
+        <h1 class="text-2xl font-bold text-center mb-4">My To Do List</h1>  <!-- Indentasi dibersihkan untuk kejelasan -->
+    </header>
 
-   <main>
-    <section class="todo-app my-4">
+    <main class="bg-gray-800 p-6 rounded-xl shadow-lg w-full max-w-lg">
+        <section class="todo-app my-4">
             <input type="text" class="border rounded p-2" id="todo-input" placeholder="Add a new task...">
-            <input type="date" class="border rounded p-2" id="due-date" placeholder="Select due date..." >
+            <input type="date" class="border rounded p-2" id="due-date" placeholder="Select due date...">
             <button id="add-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="addtask()">Add</button>
-    </section>
-    <section class="flex justify-between my-4">
-        <button id="filter-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">filter</button>
-        <button id="delete-all-btn" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="deleteAllTasks()">Delete all tasks</button>
-    </section>
-    
-    <section>
-        <h2 class="my-4">List of tasks</h2>
-        <table id="task-list" class="min-w-full border-collapse border border-gray-200">
-            <thead>
-                <tr>
-                    <th class="border border-gray-200 rounded">No</th>
-                    <th class="border border-gray-200 rounded">Task</th>
-                    <th class="border border-gray-200 rounded">Due Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td colspan="3" class="text-center">No task added yet</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-   </main>
-   
-   
+        </section>
 
-   <footer>
-    <p class="text-center">&copy; 2024 Mojo My todo list app</p>
-   </footer>
+        <section class="flex justify-between my-4">
+            <!-- Perbaikan: Label sekarang memiliki teks untuk aksesibilitas -->
+            <button id="filter-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="filtertask()">Filter</button>
+            <!-- Label dengan teks yang jelas -->
+            <input type="text" id="filter-task" class="border rounded p-2" placeholder="Filter tasks..." onkeyup="filtertask()">
+            <input type="month" id="filter-month" class="border rounded p-2" onchange="filtertask()">
+            <button id="delete-all-btn" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="deleteAllTasks()">Delete all tasks</button>
+        </section>
+        
+        <section>
+            <h2 class="my-4">List of tasks</h2>
+            <table id="task-list" class="min-w-full border-collapse border border-gray-200">
+                <thead>
+                    <tr>
+                        <th class="border border-gray-200 rounded">No</th>
+                        <th class="border border-gray-200 rounded">Task</th>
+                        <th class="border border-gray-200 rounded">Due Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="3" class="text-center">No task added yet</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
 
-    <script src="js/script.js"></script>
+    <footer>
+        <p class="text-center">&copy; 2024 Mojo My todo list app</p>
+    </footer>
+
+    <script src="js/script.js"></script>  <!-- Script JavaScript Anda, pastikan sudah diperbarui -->
 </body>
 </html>
